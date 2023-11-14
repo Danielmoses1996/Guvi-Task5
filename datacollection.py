@@ -13,7 +13,7 @@ data = pd.get_dummies(data, columns=['town'], drop_first=True)
 data.drop_duplicates(inplace=True)
 data.dropna(inplace=True)
 
-features = data[['month','flat_type', 'block', 'street_name', 'storey_range','floor_area_sqm','flat_model','lease_commence_date','remaining_lease','resale_price']]
+features = data[['month','town','flat_type', 'block', 'street_name', 'storey_range','floor_area_sqm','flat_model','lease_commence_date','remaining_lease','resale_price']]
 
 current_year = 2023
 features['flat_age'] = current_year - data['lease_commence_date']
